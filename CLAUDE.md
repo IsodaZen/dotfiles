@@ -15,6 +15,9 @@ chezmoi はソースディレクトリのファイル名をプレフィックス
 | `dot_` | `.`（ドット）に置換 |
 | `empty_` | 空ファイルとして作成 |
 | `executable_` | 実行権限付きで作成 |
+| `run_once_` | 初回のみ実行されるスクリプト（ハッシュで追跡） |
+| `run_onchange_` | ファイル内容が変わるたびに実行されるスクリプト |
+| `run_once_before_` | 初回かつ dotfiles 展開前に実行されるスクリプト |
 | プレフィックスなし | chezmoi が無視（AI用ドキュメントはここに置く） |
 
 **例：** `dot_zshrc` → `~/.zshrc`、`dot_config/wezterm/wezterm.lua` → `~/.config/wezterm/wezterm.lua`
@@ -25,20 +28,23 @@ chezmoi はソースディレクトリのファイル名をプレフィックス
 
 ```text
 chezmoi/
-├── CLAUDE.md                        # このファイル（AI用、chezmoiは無視）
-├── .chezmoiignore                   # chezmoiが無視するファイルの明示定義
-├── dot_zshrc                        # ~/.zshrc
+├── CLAUDE.md                              # このファイル（AI用、chezmoiは無視）
+├── .chezmoiignore                         # chezmoiが無視するファイルの明示定義
+├── run_once_before_install-homebrew.sh    # Homebrew インストール（dotfiles展開前・初回のみ）
+├── run_onchange_install-brew-packages.sh  # brew パッケージインストール（パッケージリスト変更時）
+├── run_once_install-bun.sh                # Bun インストール（初回のみ）
+├── dot_zshrc                              # ~/.zshrc
 ├── dot_zsh/conf/
-│   ├── key-binding.conf             # bashのconf読み込み（zsh経由）
-│   └── set-prompt.conf              # zshプロンプト設定
-├── dot_bashrc                       # ~/.bashrc（エイリアス、PATH、共通設定）
-├── dot_bash_profile                 # ~/.bash_profile
+│   ├── key-binding.conf                   # bashのconf読み込み（zsh経由）
+│   └── set-prompt.conf                    # zshプロンプト設定
+├── dot_bashrc                             # ~/.bashrc（エイリアス、PATH、共通設定）
+├── dot_bash_profile                       # ~/.bash_profile
 ├── dot_bash/conf/
-│   ├── homebrew.conf                # Homebrew PATH設定（macOS専用）
-│   └── bun.conf                     # Bun ランタイム設定
-├── dot_gitconfig                    # ~/.gitconfig
-├── dot_config/wezterm/wezterm.lua   # ~/.config/wezterm/wezterm.lua
-└── empty_dot_zprofile               # ~/.zprofile（空ファイル）
+│   ├── homebrew.conf                      # Homebrew PATH設定（macOS専用）
+│   └── bun.conf                           # Bun ランタイム設定
+├── dot_gitconfig                          # ~/.gitconfig
+├── dot_config/wezterm/wezterm.lua         # ~/.config/wezterm/wezterm.lua
+└── empty_dot_zprofile                     # ~/.zprofile（空ファイル）
 ```
 
 ---
