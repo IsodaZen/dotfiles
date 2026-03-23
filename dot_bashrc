@@ -1,0 +1,22 @@
+# alias
+alias la='ls -latrG'
+alias ll='ls -ltrG'
+alias ls='ls -G'
+alias diff='diff -u'
+# alias grep='ggrep'
+
+alias vi='vim'
+alias vim='nvim'
+
+# read confs
+CONF_DIR="${HOME}/.bash/conf/"
+for conf in $(find ${CONF_DIR} -name '*.conf'); do
+  source ${conf}
+done
+
+#
+export PATH="~/develop/bin:${PATH}"
+export HISTSIZE="50000"
+
+# tarコマンド
+export COPYFILE_DISABLE=1

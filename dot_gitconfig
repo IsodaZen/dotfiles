@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Z.Isoda
+[alias]
+  br = branch -a
+  st = status
+  wt = worktree
+  graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  wdiff = diff --word-diff=color --word-diff-regex='\\w+|[^[:space:]]' -w
+  develop = !git checkout develop && git fetch -p && git merge --ff origin/develop
+  main = !git checkout main && git fetch -p && git merge --ff origin/main
+  master = !git checkout master && git fetch -p && git merge --ff origin/master
+  mdiff = diff --minimal
+  pfetch = fetch -p
+[color]
+  ui = true
+[core]
+	quotepath = false
+  autocrlf = false
+	editor = vim
+	excludesfile = ~/.config/git/ignore
+[submodule]
+	recurse = true

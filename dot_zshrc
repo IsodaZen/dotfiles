@@ -1,0 +1,12 @@
+
+autoload -Uz compinit && compinit
+autoload -Uz promptinit && promptinit
+autoload -Uz vcs_info
+
+[ -e "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+
+# read confs
+CONF_DIR="${HOME}/.zsh/conf/"
+for conf in $(find ${CONF_DIR} -name '*.conf'); do
+  source ${conf}
+done
