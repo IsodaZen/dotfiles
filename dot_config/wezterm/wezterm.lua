@@ -2,8 +2,13 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- フォント
-config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
-config.font_size = 12.0
+config.font = wezterm.font_with_fallback {
+  -- 'JetBrains Mono', -- 英語用
+  -- 'Osaka', -- 日本語用
+  { family = "Cica" },
+  { family = "Cica", assume_emoji_presentation = true },
+}
+config.font_size = 14.0
 
 -- カラースキーム
 config.color_scheme = 'lovelace'
