@@ -11,7 +11,7 @@
 chezmoi はソースディレクトリのファイル名をプレフィックスで解釈し、ホームディレクトリへ展開します。
 
 | プレフィックス | 展開後 |
-|---|---|
+| -------------- | ------ |
 | `dot_` | `.`（ドット）に置換 |
 | `empty_` | 空ファイルとして作成 |
 | `executable_` | 実行権限付きで作成 |
@@ -23,22 +23,19 @@ chezmoi はソースディレクトリのファイル名をプレフィックス
 
 ## ファイル構成
 
-```
+```text
 chezmoi/
 ├── CLAUDE.md                        # このファイル（AI用、chezmoiは無視）
 ├── .chezmoiignore                   # chezmoiが無視するファイルの明示定義
-│
 ├── dot_zshrc                        # ~/.zshrc
 ├── dot_zsh/conf/
 │   ├── key-binding.conf             # bashのconf読み込み（zsh経由）
 │   └── set-prompt.conf              # zshプロンプト設定
-│
 ├── dot_bashrc                       # ~/.bashrc（エイリアス、PATH、共通設定）
 ├── dot_bash_profile                 # ~/.bash_profile
 ├── dot_bash/conf/
 │   ├── homebrew.conf                # Homebrew PATH設定（macOS専用）
 │   └── bun.conf                     # Bun ランタイム設定
-│
 ├── dot_gitconfig                    # ~/.gitconfig
 ├── dot_config/wezterm/wezterm.lua   # ~/.config/wezterm/wezterm.lua
 └── empty_dot_zprofile               # ~/.zprofile（空ファイル）
