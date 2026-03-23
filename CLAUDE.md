@@ -6,21 +6,19 @@
 
 ---
 
+## MUST: 編集時の注意
+
+- **実ファイル（`~/.zshrc` 等）を直接編集してはいけません。**
+  このリポジトリ内のソースファイル（`dot_zshrc` 等）を編集し、`chezmoi apply` で反映します。
+- `dot_` プレフィックスを外した名前が実際のファイル名です。迷ったら上記の構成表を参照してください。
+- **管理対象外のファイルは `.chezmoiignore` に明示的に追記してください。**
+  chezmoi はプレフィックスなしのファイルを自動で無視しますが、意図を明確にするために `.chezmoiignore` へも記載します。
+
+---
+
 ## chezmoi 命名規則
 
-chezmoi はソースディレクトリのファイル名をプレフィックスで解釈し、ホームディレクトリへ展開します。
-
-| プレフィックス | 展開後 |
-| -------------- | ------ |
-| `dot_` | `.`（ドット）に置換 |
-| `empty_` | 空ファイルとして作成 |
-| `executable_` | 実行権限付きで作成 |
-| `run_once_` | 初回のみ実行されるスクリプト（ハッシュで追跡） |
-| `run_onchange_` | ファイル内容が変わるたびに実行されるスクリプト |
-| `run_once_before_` | 初回かつ dotfiles 展開前に実行されるスクリプト |
-| プレフィックスなし | chezmoi が無視（AI用ドキュメントはここに置く） |
-
-**例：** `dot_zshrc` → `~/.zshrc`、`dot_config/wezterm/wezterm.lua` → `~/.config/wezterm/wezterm.lua`
+詳細は [.claude/references/chezmoi.md](.claude/references/chezmoi.md) を参照。
 
 ---
 
@@ -64,16 +62,6 @@ chezmoi re-add ~/.zshrc
 # ソースファイルを直接編集
 chezmoi edit ~/.zshrc
 ```
-
----
-
-## 編集時の注意
-
-- **実ファイル（`~/.zshrc` 等）を直接編集してはいけません。**
-  このリポジトリ内のソースファイル（`dot_zshrc` 等）を編集し、`chezmoi apply` で反映します。
-- `dot_` プレフィックスを外した名前が実際のファイル名です。迷ったら上記の構成表を参照してください。
-- **管理対象外のファイルは `.chezmoiignore` に明示的に追記してください。**
-  chezmoi はプレフィックスなしのファイルを自動で無視しますが、意図を明確にするために `.chezmoiignore` へも記載します。
 
 ---
 
