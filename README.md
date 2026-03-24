@@ -1,7 +1,5 @@
 # dotfiles
 
-[chezmoi](https://www.chezmoi.io/) を使って macOS の環境設定ファイルを管理するリポジトリです。
-
 ---
 
 ## 前提条件
@@ -15,40 +13,24 @@
 
 ### 1. chezmoi のインストール & dotfiles の適用
 
-公式ワンライナーで chezmoi のインストールと dotfiles の適用を一括で実行します。
-
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:IsodaZen/dotfiles.git
 ```
 
-> chezmoi は `~/.local/bin` にインストールされます。
-
-### 2. Homebrew のインストール
+### 2. ファイルの適用
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+chezmoi apply
 ```
 
-### 3. その他ツールのインストール
-
-```sh
-# エディタ
-brew install neovim
-
-# ターミナル & フォント
-brew install --cask wezterm
-brew install --cask font-jetbrains-mono
-
-# JavaScript ランタイム
-curl -fsSL https://bun.sh/install | bash
-```
+ファイルの追加、Homebrewやその他のツールがインストールされる
 
 ---
 
 ## 管理されている設定ファイル
 
 | ソースファイル | 展開先 | 概要 |
-|---|---|---|
+| -------------- | ------ | ---- |
 | `dot_zshrc` | `~/.zshrc` | zsh メイン設定 |
 | `dot_zsh/conf/set-prompt.conf` | `~/.zsh/conf/set-prompt.conf` | プロンプト・chpwd フック |
 | `dot_zsh/conf/key-binding.conf` | `~/.zsh/conf/key-binding.conf` | bash conf の読み込み |
@@ -57,6 +39,7 @@ curl -fsSL https://bun.sh/install | bash
 | `dot_bash/conf/homebrew.conf` | `~/.bash/conf/homebrew.conf` | Homebrew PATH 初期化 |
 | `dot_bash/conf/bun.conf` | `~/.bash/conf/bun.conf` | Bun PATH・補完設定 |
 | `dot_gitconfig` | `~/.gitconfig` | Git ユーザー・エイリアス設定 |
+| `dot_config/nvim/` | `~/.config/nvim/` | Neovim 設定（init.vim, dein.toml, config/） |
 | `dot_config/wezterm/wezterm.lua` | `~/.config/wezterm/wezterm.lua` | WezTerm 設定 |
 | `empty_dot_zprofile` | `~/.zprofile` | 空ファイル（zsh 用） |
 

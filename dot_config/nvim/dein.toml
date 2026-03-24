@@ -1,0 +1,45 @@
+# complete
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  source $HOME/.config/nvim/config/deoplete.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+# filer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  source $HOME/.config/nvim/config/nerdtree.vim
+'''
+
+# statusline
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# 無駄な空白をハイライト
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# `gcc`でコメント化
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# colors
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+# syntaxes
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+

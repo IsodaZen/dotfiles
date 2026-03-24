@@ -3,8 +3,6 @@ local config = wezterm.config_builder()
 
 -- フォント
 config.font = wezterm.font_with_fallback {
-  -- 'JetBrains Mono', -- 英語用
-  -- 'Osaka', -- 日本語用
   { family = "Cica" },
   { family = "Cica", assume_emoji_presentation = true },
 }

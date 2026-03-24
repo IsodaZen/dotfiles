@@ -1,0 +1,36 @@
+#[[plugins]]
+#repo = 'davidhalter/jedi-vim'
+#on_ft = 'python'
+
+# for js highlight
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = 'javascript'
+
+#[[plugins]]
+#repo = 'OmniSharp/omnisharp-vim'
+#on_ft = 'cs'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+#[[plugins]]
+#repo = 'Quramy/tsuquyomi'
+#on_ft = 'typescript'
+
+[[plugins]]
+repo = 'vim-scripts/nginx.vim'
+on_ft = 'nginx'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = 'plantuml'
