@@ -58,7 +58,14 @@ require("neo-tree").setup({
 -- NVIMを開いた場合にNeo-treeを表示
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    require("neo-tree.command").execute({ source = "filesystem", action = 'focus'})
+    local args = vim.fn.argv()
+    if #args > 0 and vim.fn.filereadable(args[1]) == 1 then
+      -- ファイル指定の場合は、ファイルバッファをフォーカス
+      require("neo-tree.command").execute({ source = "filesystem", action = 'show'})
+    else
+      -- ディレクトリ指定 or 未指定の場合は、エクスプローラにフォーカス
+      require("neo-tree.command").execute({ source = "filesystem", action = 'focus'})
+    end
   end,
 })
 
