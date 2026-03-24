@@ -45,6 +45,9 @@ repo = 'bronson/vim-trailing-whitespace'
 # `gcc`でコメント化
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+hook_add = '''
+  source $HOME/.config/nvim/config/tcomment.vim
+'''
 
 # colors
 [[plugins]]
