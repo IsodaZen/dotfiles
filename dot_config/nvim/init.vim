@@ -15,8 +15,8 @@ execute 'source '.s:COMF_DIR.'/color.vim'
 " 折りたたみ設定
 set foldmethod=indent
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
-"set foldclose=all
 set foldminlines=2
+set foldlevel=4
 
 "------------------------------------------------------------------------------
 " キーマップ設定

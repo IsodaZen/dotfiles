@@ -12,12 +12,23 @@ build = 'make'
 [[plugins]]
 repo = 'tpope/vim-dispatch'
 
-# filer
+
+# Exploler
 [[plugins]]
-repo = 'scrooloose/nerdtree'
+repo = 'nvim-neo-tree/neo-tree.nvim'
+depends = ['nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons', 'MunifTanjim/nui.nvim']
 hook_add = '''
-  source $HOME/.config/nvim/config/nerdtree.vim
+  source $HOME/.config/nvim/config/neotree.lua
 '''
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-tree/nvim-web-devicons'
+
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
 
 # statusline
 [[plugins]]
