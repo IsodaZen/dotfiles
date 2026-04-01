@@ -1,11 +1,4 @@
-# AI用ドキュメント
-CLAUDE.md
-openspec/
-
-# リポジトリドキュメント
+# 本ファイルは、Homeディレクトリ配下でchezmoiが管理対象から外すファイルを指定するものである。
+.ssh/
 README.md
-
-# 本リポジトリの作業用
-.vscode
-.claude/
-
+CLAUDE.md
