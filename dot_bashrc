@@ -15,7 +15,7 @@ for conf in $(find ${CONF_DIR} -name '*.conf'); do
 done
 
 #
-export PATH="${HOME}/bin:${HOME}/develop/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/develop/bin:$HOME/.local/bin:${PATH}"
 export HISTSIZE="50000"
 
 # tarコマンド
