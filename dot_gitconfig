@@ -18,7 +18,7 @@
 [core]
 	quotepath = false
   autocrlf = false
-	editor = vim
+	editor = vim -u NONE
 	excludesfile = ~/.config/git/ignore
 [submodule]
 	recurse = true

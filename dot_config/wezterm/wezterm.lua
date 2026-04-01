@@ -6,7 +6,7 @@ config.font = wezterm.font_with_fallback {
   { family = "Cica" },
   { family = "Cica", assume_emoji_presentation = true },
 }
-config.font_size = 14.0
+config.font_size = 16.0
 
 -- カラースキーム
 config.color_scheme = 'lovelace'

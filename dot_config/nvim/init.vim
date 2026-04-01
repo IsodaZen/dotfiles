@@ -73,11 +73,12 @@ autocmd BufNewFile,BufRead *.uml  set filetype=plantuml
 " ファイルタイプに応じた設定を読み込み
 augroup FileTypes
   autocmd!
-  autocmd FileType javascript execute 'source '.s:COMF_DIR.'javascript.vim'
-  autocmd FileType json       execute 'source '.s:COMF_DIR.'json.vim'
-  autocmd FileType groovy     execute 'source '.s:COMF_DIR.'groovy.vim'
-  autocmd FileType php        execute 'source '.s:COMF_DIR.'php.vim'
-  autocmd FileType python     execute 'source '.s:COMF_DIR.'python.vim'
+  autocmd FileType javascript execute 'source '.s:COMF_DIR.'/javascript.vim'
+  autocmd FileType json       execute 'source '.s:COMF_DIR.'/json.vim'
+  autocmd FileType groovy     execute 'source '.s:COMF_DIR.'/groovy.vim'
+  autocmd FileType php        execute 'source '.s:COMF_DIR.'/php.vim'
+  autocmd FileType python     execute 'source '.s:COMF_DIR.'/python.vim'
+  autocmd FileType markdown   execute 'source '.s:COMF_DIR.'/markdown.vim'
 augroup END
 
 
