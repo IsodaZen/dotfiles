@@ -1,8 +1,10 @@
 #!/bin/sh
 # パッケージリストを変数で管理（変更すると chezmoi apply 時に再実行される）
 PACKAGES="
+  chezmoi
   neovim
   git
+  anyenv
 "
 CASKS="
   wezterm
